@@ -1,4 +1,4 @@
-package com.GraphQL.HP657.user;
+package com.GraphQL.HP657.domain.user;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

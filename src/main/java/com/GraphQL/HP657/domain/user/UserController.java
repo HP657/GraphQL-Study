@@ -1,4 +1,4 @@
-package com.GraphQL.HP657.user;
+package com.GraphQL.HP657.domain.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.graphql.data.method.annotation.Argument;
@@ -25,12 +25,12 @@ public class UserController {
     }
 
     @QueryMapping
-    public User getUserById(@Argument(name = "id") Long id) {
-        return userService.getUserById(id).orElse(null);
+    public User getUserById(@Argument(name = "userId") Long userId) {
+        return userService.getUserById(userId).orElse(null);
     }
 
     @MutationMapping
-    public void deleteUser(@Argument(name = "id") Long id) {
-        userService.deleteUser(id);
+    public void deleteUser(@Argument(name = "userId") Long userId) {
+        userService.deleteUser(userId);
     }
 }
