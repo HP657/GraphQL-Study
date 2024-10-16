@@ -8,18 +8,15 @@ import java.util.Optional;
 
 @Service
 public class UserService {
-    private final UserRepository userRepository;
-
+    
     @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
+    private UserRepository userRepository;
 
     public User createUser(String username, String email) {
-        User user = new User(); // 기본 생성자 호출
-        user.setUsername(username); // username 설정
-        user.setEmail(email); // email 설정
-        return userRepository.save(user); // 저장 후 반환
+        User user = new User();
+        user.setUsername(username);
+        user.setEmail(email);
+        return userRepository.save(user);
     }
 
     public List<User> getAllUsers() {
